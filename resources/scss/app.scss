@@ -1,0 +1,48 @@
+@import '~bootstrap/scss/bootstrap';
+
+
+#sidebar{
+    width: 150px;
+    height: 100vh;
+    background-color: black;
+
+    ul{
+        margin-top: 75px;
+        
+        a{
+            text-decoration: none;
+        }
+    }
+}
+
+#content{
+    width: calc(100vw - 150px);
+    height: 100vh;
+}
+
+header{
+    height: 75px;
+    background-color: black;
+
+    .nav-link{
+        color: white;
+        opacity: 0.9;
+        transition: all 0.25s ;
+
+        &:hover{
+            color: white !important;
+            opacity: 1;
+            transform: scale(1.005);
+        }
+    }
+
+}
+
+main{
+    height: calc(100% - 75px);
+    padding: 20px 10px;
+}
+
+.project_image{
+    width: 200px;
+}

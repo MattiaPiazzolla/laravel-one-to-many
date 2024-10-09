@@ -11,9 +11,14 @@ class Project extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'slug', 'summary', 'project_image'];
+    protected $fillable = ['name', 'slug', 'summary', 'project_image', 'category_id'];
 
     public static function generateSlug($title){
         return Str::slug($title, '-');
+    }
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
     }
 }

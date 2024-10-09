@@ -13,6 +13,8 @@
                 @endif
                 <p class="mt-5">{{ $project->slug }}</p>
                 <p>{{ $project->summary }}</p>
+                <p>{{ $project->category->name }}</p>
+
 
             </div>
         </div>

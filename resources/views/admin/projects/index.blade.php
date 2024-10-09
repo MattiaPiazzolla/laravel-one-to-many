@@ -9,7 +9,7 @@
                     <a href="{{ route('admin.projects.create') }}" class="btn btn-sm btn-primary">Aggiungi Progetto</a>
                 </div>
             </div>
-            <div class="col-12">
+            <div class="col-12 overflow-scroll">
                 <table class="table table-hover table-striped table-bordered">
                     <thead class="thead-dark">
                         <tr>

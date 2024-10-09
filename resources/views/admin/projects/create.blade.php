@@ -39,6 +39,16 @@
                         placeholder="Inserisci una descrizione breve del progetto"></textarea>
                 </div>
 
+                <div class="mb-3">
+                    <label for="category_id" class="form-label">Categoria</label>
+                    <select class="form-control" id="category_id" name="category_id" required>
+                        <option value="">Seleziona un Linguaggio</option>
+                        @foreach ($categories as $category)
+                            <option value="{{ $category->id }}">{{ $category->name }}</option>
+                        @endforeach
+                    </select>
+                </div>
+
                 <button type="submit" class="btn btn-primary">Salva Progetto</button>
             </form>
         </div>

@@ -3,6 +3,8 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule; 
+
 
 class UpdateProjectRequest extends FormRequest
 {
@@ -27,6 +29,7 @@ class UpdateProjectRequest extends FormRequest
             'name' => 'required|string|max:100',
             'summary' => 'nullable|string',
             'project_image' => 'nullable|image|max:2048',  
+            'category_id' => ['nullable', Rule::exists('categories', 'id')], 
         ];
     }
     public function messages()
@@ -38,6 +41,7 @@ class UpdateProjectRequest extends FormRequest
             'summary.string' => 'Il sommario deve essere una stringa.',
             'project_image.image' => "Il file caricato deve essere un'immagine.",
             'project_image.max' => "L'immagine non può superare i 2MB.",
+            'category_id.exists' => 'La categoria selezionata non è valida.',
         ];
     }
 }

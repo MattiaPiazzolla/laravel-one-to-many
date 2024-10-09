@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule; 
 
 class StoreProjectRequest extends FormRequest
 {
@@ -27,7 +28,7 @@ class StoreProjectRequest extends FormRequest
             'name' => 'required|string|max:100',
             'summary' => 'nullable|string',
             'project_image' => 'nullable|image|mimes:jpg,png,jpeg|max:2048',
-            'category_id' => 'nullable|exists:categories,id',
+            'category_id' => ['nullable', Rule::exists('categories', 'id')], 
         ];
     }
 

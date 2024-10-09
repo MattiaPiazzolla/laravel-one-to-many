@@ -13,7 +13,7 @@
                 @endif
                 <p class="mt-5">{{ $project->slug }}</p>
                 <p>{{ $project->summary }}</p>
-                <p>{{ $project->category->name }}</p>
+                <p>{{ $project->category ? $project->category->name : 'Nessuna Categoria' }}</p>
 
 
             </div>

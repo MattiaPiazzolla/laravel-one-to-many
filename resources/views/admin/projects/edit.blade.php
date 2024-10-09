@@ -49,6 +49,20 @@
                         <label for="summary">Riassunto</label>
                         <textarea class="form-control" id="summary" name="summary" rows="3">{{ $project->summary }}</textarea>
                     </div>
+
+                    <div class="form-group mt-3">
+                        <label for="category_id">Categoria</label>
+                        <select class="form-select" id="category_id" name="category_id" required>
+                            <option value="" disabled>Seleziona una categoria</option>
+                            @foreach ($categories as $category)
+                                <option value="{{ $category->id }}"
+                                    {{ $project->category_id == $category->id ? 'selected' : '' }}>
+                                    {{ $category->name }}
+                                </option>
+                            @endforeach
+                        </select>
+                    </div>
+
                     <button type="submit" class="btn btn-warning mt-3">Aggiorna Progetto</button>
                 </form>
             </div>

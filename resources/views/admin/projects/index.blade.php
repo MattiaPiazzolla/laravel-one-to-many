@@ -13,10 +13,11 @@
                 <table class="table table-hover table-striped table-bordered">
                     <thead class="thead-dark">
                         <tr>
-                            <th scope="col">Id</th>
-                            <th scope="col">Nome</th>
-                            <th scope="col">Slug</th>
-                            <th scope="col" class="text-center">Comandi</th>
+                            <th>Id</th>
+                            <th>Nome</th>
+                            <th>Slug</th>
+                            <th>Linguaggio Principale</th>
+                            <th class="text-center">Comandi</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -25,6 +26,7 @@
                                 <td>{{ $project->id }}</td>
                                 <td>{{ $project->name }}</td>
                                 <td>{{ $project->slug }}</td>
+                                <td>{{ $project->category ? $project->category->name : 'Nessuna Categoria' }}</td>
                                 <td class="text-center">
                                     <div class="d-flex justify-content-between">
                                         <a href="{{ route('admin.projects.show', ['project' => $project->id]) }}"
